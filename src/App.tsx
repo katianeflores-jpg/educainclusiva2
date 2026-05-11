@@ -168,9 +168,14 @@ export default function App() {
     { id: 'professor', label: 'Papel do Professor' },
     { id: 'conteudo', label: 'Boas Práticas em Sala de Aula' },
     { id: 'referencias', label: 'Curadoria e Referências' },
+    { id: 'avalie', label: 'Avalie', isExternal: true, link: '#' },
   ];
 
-  const scrollToSection = (id: string) => {
+  const scrollToSection = (id: string, isExternal?: boolean, link?: string) => {
+    if (isExternal && link) {
+      window.open(link, '_blank', 'noopener,noreferrer');
+      return;
+    }
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -193,8 +198,8 @@ export default function App() {
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-sm font-medium text-gray-600 hover:text-brand-purple transition-colors"
+                onClick={() => scrollToSection(item.id, item.isExternal, item.link)}
+                className={`text-sm font-medium transition-colors ${item.isExternal ? 'text-brand-purple font-black' : 'text-gray-600 hover:text-brand-purple'}`}
               >
                 {item.label}
               </button>
@@ -220,8 +225,8 @@ export default function App() {
                 {navItems.map((item) => (
                   <button
                     key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className="text-left py-2 px-4 hover:bg-brand-neutral rounded-md"
+                    onClick={() => scrollToSection(item.id, item.isExternal, item.link)}
+                    className={`text-left py-2 px-4 rounded-md transition-colors ${item.isExternal ? 'bg-brand-purple/10 text-brand-purple font-bold' : 'hover:bg-brand-neutral'}`}
                   >
                     {item.label}
                   </button>
@@ -233,6 +238,34 @@ export default function App() {
       </nav>
 
       <main className="pt-16">
+        {/* Evaluation Banner */}
+        <div className="bg-brand-dark text-white border-b border-white/10 relative overflow-hidden group">
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-purple/20 to-transparent pointer-events-none"></div>
+          <motion.div 
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-4 relative z-10"
+          >
+            <div className="flex items-center gap-4 text-center md:text-left">
+              <div className="bg-brand-purple p-2.5 rounded-xl animate-pulse shadow-lg shadow-brand-purple/30">
+                <Speaker className="text-white" size={20} />
+              </div>
+              <div>
+                <p className="text-sm font-black uppercase tracking-tight leading-none mb-1">Avaliação do Trabalho Acadêmico</p>
+                <p className="text-xs text-gray-400 font-medium">Por favor, navegue pelos conteúdos antes de realizar sua avaliação. Sua opinião é fundamental!</p>
+              </div>
+            </div>
+            <a 
+              href="#" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-8 py-2.5 bg-brand-purple hover:bg-brand-purple/90 text-white text-[10px] font-black rounded-full transition-all flex items-center gap-2 uppercase tracking-widest shadow-xl shadow-brand-purple/20 hover:scale-105 active:scale-95"
+            >
+              Avaliar agora <ArrowRight size={14} />
+            </a>
+          </motion.div>
+        </div>
+
         {/* Intro Section */}
         <section id="inicio" className="bg-brand-beige py-20 px-4">
           <div className="max-w-7xl mx-auto">
