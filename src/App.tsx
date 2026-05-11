@@ -34,6 +34,11 @@ import {
 
 import introImg from './assets/images/regenerated_image_1778097519723.png';
 import practicesImg from './assets/images/regenerated_image_1778097517365.png';
+import antraImg from './assets/images/regenerated_image_1778522677796.png';
+import aliancaImg from './assets/images/regenerated_image_1778522679760.png';
+import cordeiroImg from './assets/images/regenerated_image_1778522682255.png';
+import sallesImg from './assets/images/regenerated_image_1778522681295.png';
+import sousaImg from './assets/images/regenerated_image_1778522681791.png';
 
 // --- DATA FROM PDF CONTENT ---
 
@@ -83,27 +88,74 @@ const TransLogo = () => (
   </div>
 );
 
-const references = [
+const highlightedReferences = [
   {
     text: "ANTRA. Dossiê: Assassinatos e violência contra travestis e demais pessoas trans no Brasil em 2025. Associação Nacional de Travestis e Transexuais, 2026.",
-    link: "https://antrabrasil.org/wp-content/uploads/2026/01/dossie-antra-2026.pdf"
+    link: "https://antrabrasil.org/wp-content/uploads/2026/01/dossie-antra-2026.pdf",
+    thumbnail: antraImg
   },
   {
     text: "ALIANÇA LGBTI+. Panorama da Diversidade Sexual e de Gênero nas Escolas: Desafios e Metas para 2025. Curitiba: Aliança Nacional LGBTI+, 2025.",
-    link: "https://aliancalgbti.org.br/wp-content/uploads/2025/04/Apresentacao_Evento-de-Lancamento_Alianca-LGBTI.pdf"
+    link: "https://aliancalgbti.org.br/wp-content/uploads/2025/04/Apresentacao_Evento-de-Lancamento_Alianca-LGBTI.pdf",
+    thumbnail: aliancaImg
   },
   {
-    text: "CORDEIRO, Maria José de Jesus Alves; RODRIGUES, Nadir Pereira. Formação docente na perspectiva da diversidade de gênero e sexualidade: desafios e possibilidades. Revista Observatorio de la Economía Latinoamericana, v. 22, n. 7, 2024."
+    text: "FAVERO, Sofia. Crianças Trans: Entre o Cuidado e a Patologização (Tese de Doutorado). UFRGS, 2024.",
+    link: "https://www.academia.edu/129232361/Tese_Sofia_Favero_PPGPSI_UFRGS",
+    thumbnail: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=150&h=150"
   },
   {
-    text: "SALLES, Suzana de Moura Einloft; GUIMARAES, Willian. O papel da gestão escolar na implementação de políticas de diversidade sexual e de gênero nas escolas escolas públicas. Revista Ação e Reflexão, v. 3, n. 1, p. 1-14, 2025."
-  },
-  {
-    text: "SOUSA, Kelyane Oliveira de. Programa de habilidades sociais na escola: uma forma de combate ao preconceito contra a diversidade sexual. 2017."
-  },
-  {
-    text: "Resolução CNE/CP nº 01/2018 - Nome Social na Educação Básica."
+    text: "SILVA, A. S. et al. Educação por uma escola que ensine e acolha a diversidade de gênero. Revista Educação em Questão, 2024.",
+    link: "https://doi.org/10.25053/redufor.v10.e15342",
+    thumbnail: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=150&h=150"
   }
+];
+
+const simpleReferences = [
+  "CORDEIRO, Maria José de Jesus Alves; RODRIGUES, Nadir Pereira. Formação docente na perspectiva da diversidade de gênero e sexualidade: desafios e possibilidades. Revista Observatorio de la Economía Latinoamericana, v. 22, n. 7, 2024.",
+  "SALLES, Suzana de Moura Einloft; GUIMARAES, Willian. O papel da gestão escolar na implementação de políticas de diversidade sexual e de gênero nas escolas públicas. Revista Ação e Reflexão, v. 3, n. 1, p. 1-14, 2025.",
+  "SOUSA, Kelyane Oliveira de. Programa de habilidades sociais na escola: uma forma de combate ao preconceito contra a diversidade sexual. 2017.",
+  "BRASIL. Ministério da Educação. Resolução CNE/CP nº 01/2018 - Nome Social na Educação Básica."
+];
+
+const audiovisualMaterials = [
+  {
+    title: "A crise de saúde mental entre os jovens brasileiro",
+    link: "https://youtu.be/IrzO1Emc-Cg?si=63Hp2Y9Po9Nwdn7J",
+    type: "Podcast",
+    thumbnail: "https://img.youtube.com/vi/IrzO1Emc-Cg/maxresdefault.jpg"
+  },
+  {
+    title: "Conhecendo pessoas diferentes...parte 1",
+    link: "https://www.youtube.com/watch?v=ZVnQxqyI4r0",
+    type: "Vídeo / Entrevista",
+    thumbnail: "https://img.youtube.com/vi/ZVnQxqyI4r0/maxresdefault.jpg"
+  },
+  {
+    title: "Judith Butler - Seu comportamento cria seu gênero",
+    link: "https://www.youtube.com/watch?v=9MlqEoCFtPM",
+    type: "Vídeo / Documentário",
+    thumbnail: "https://img.youtube.com/vi/9MlqEoCFtPM/maxresdefault.jpg"
+  },
+  {
+    title: "Conhecendo pessoas diferentes...parte 2",
+    link: "https://www.youtube.com/watch?v=DZsBei4nCkU",
+    type: "Vídeo / Entrevista",
+    thumbnail: "https://img.youtube.com/vi/DZsBei4nCkU/maxresdefault.jpg"
+  }
+];
+
+const projectTeam = [
+  "Katiane Soares Flores",
+  "Vitória de souza Silva",
+  "Antônia Alves Rodrigues",
+  "Caroline Nogueira bussola",
+  "Denise Reis Takacs",
+  "Giovanna Romagnoli Caetano",
+  "Marcia Cardoso da Cruz",
+  "Andreia Vieira dos Reis Silva",
+  "Silvana Marques correa",
+  "Steffany da silva Tropardi"
 ];
 
 export default function App() {
@@ -115,7 +167,7 @@ export default function App() {
     { id: 'contexto', label: 'Insegurança no Ambiente Escola' },
     { id: 'professor', label: 'Papel do Professor' },
     { id: 'conteudo', label: 'Boas Práticas em Sala de Aula' },
-    { id: 'referencias', label: 'Referências' },
+    { id: 'referencias', label: 'Curadoria e Referências' },
   ];
 
   const scrollToSection = (id: string) => {
@@ -670,30 +722,113 @@ export default function App() {
         </section>
 
         {/* References Section */}
-        <section id="referencias" className="py-24 px-4 bg-brand-neutral">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-brand-dark mb-8 flex items-center gap-2">
-              <BookOpen className="text-brand-purple" /> Referências Acadêmicas e Oficiais
-            </h2>
-            <div className="space-y-4">
-              {references.map((ref, i) => (
-                <div key={i} className="p-4 bg-white rounded-xl text-sm text-gray-600 border border-gray-100 shadow-sm flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 bg-brand-purple rounded-full mt-1.5 flex-shrink-0" />
-                  <div>
-                    <span className="leading-relaxed">{ref.text}</span>
-                    {ref.link && (
-                      <a 
-                        href={ref.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="block mt-2 text-brand-purple font-semibold hover:underline flex items-center gap-1"
-                      >
-                        Acessar documento completo <ArrowRight size={14} />
-                      </a>
-                    )}
-                  </div>
+        <section id="referencias" className="py-24 px-4 bg-brand-neutral/50">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-black text-brand-dark mb-12 text-center uppercase tracking-tighter">Curadoria e Referências</h2>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+              {/* Bibliographic References */}
+              <div>
+                <h3 className="text-xl font-black text-brand-dark mb-8 flex items-center gap-2 uppercase tracking-wide border-b-2 border-brand-purple pb-2 inline-block">
+                  <BookOpen className="text-brand-purple" /> Referências Acadêmicas e Oficiais
+                </h3>
+                <div className="space-y-6">
+                  {highlightedReferences.map((ref, i) => (
+                    <div key={i} className="group flex flex-col sm:flex-row gap-4 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm transition-all hover:shadow-md hover:translate-x-1">
+                      {ref.thumbnail && (
+                        <div className="w-full sm:w-[120px] h-[120px] rounded-xl overflow-hidden flex-shrink-0 border border-gray-50">
+                          <img 
+                            src={ref.thumbnail} 
+                            alt="" 
+                            referrerPolicy="no-referrer"
+                            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" 
+                          />
+                        </div>
+                      )}
+                      <div className="flex flex-col justify-center">
+                        <span className="text-sm text-gray-700 leading-relaxed font-medium mb-2">{ref.text}</span>
+                        {ref.link && (
+                          <a 
+                            href={ref.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-xs text-brand-purple font-black hover:underline flex items-center gap-1 uppercase tracking-tighter"
+                          >
+                            Ver documento <ArrowRight size={12} />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+
+                {/* Simple List References */}
+                <div className="mt-8 pt-8 border-t border-gray-200">
+                  <h4 className="text-xs font-black text-gray-400 uppercase tracking-widest mb-4">Outras Fontes Bibliográficas</h4>
+                  <ul className="space-y-3">
+                    {simpleReferences.map((text, i) => (
+                      <li key={i} className="text-xs text-gray-500 leading-relaxed flex gap-3 italic">
+                        <div className="w-1 h-1 bg-gray-300 rounded-full mt-1.5 flex-shrink-0" />
+                        {text}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Audiovisual Materials */}
+              <div>
+                <h3 className="text-xl font-black text-brand-dark mb-8 flex items-center gap-2 uppercase tracking-wide border-b-2 border-brand-purple pb-2 inline-block">
+                  <MessageCircle className="text-brand-purple" /> Materiais Audiovisuais
+                </h3>
+                <div className="grid grid-cols-1 gap-6">
+                  {audiovisualMaterials.map((material, i) => (
+                    <div 
+                      key={i}
+                      className="group flex flex-col sm:flex-row gap-4 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm transition-all hover:shadow-md hover:translate-x-1"
+                    >
+                      {material.thumbnail && (
+                        <div className="w-full sm:w-[120px] h-[120px] rounded-xl overflow-hidden flex-shrink-0 border border-gray-50 relative">
+                          <img 
+                            src={material.thumbnail} 
+                            alt="" 
+                            referrerPolicy="no-referrer"
+                            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" 
+                          />
+                        </div>
+                      )}
+                      <div className="flex flex-col justify-center">
+                        <span className="text-[10px] font-black text-brand-purple uppercase tracking-widest mb-1">{material.type}</span>
+                        <h4 className="text-sm font-bold text-brand-dark group-hover:text-brand-purple transition-colors leading-tight mb-2">
+                          {material.title}
+                        </h4>
+                        <a 
+                          href={material.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs text-brand-purple font-black hover:underline flex items-center gap-1 uppercase tracking-tighter"
+                        >
+                          Assistir material <ArrowRight size={12} />
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Team Section */}
+            <div className="bg-brand-dark rounded-[40px] p-12 text-white shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-96 h-96 bg-brand-purple/20 blur-[100px] rounded-full"></div>
+              <h3 className="text-2xl font-black mb-8 uppercase tracking-widest text-center border-b border-white/10 pb-6">Equipe de Elaboração</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {projectTeam.map((member, i) => (
+                  <div key={i} className="flex items-center gap-3 p-4 bg-white/5 rounded-2xl border border-white/5 backdrop-blur-sm transition-all hover:bg-white/10">
+                    <div className="w-2 h-2 rounded-full bg-brand-soft-green"></div>
+                    <span className="text-xs font-bold uppercase tracking-tight opacity-90">{member}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
