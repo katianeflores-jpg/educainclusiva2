@@ -171,16 +171,19 @@ export default function App() {
     { id: 'avalie', label: 'Avalie', isExternal: true, link: '#' },
   ];
 
-  const scrollToSection = (id: string, isExternal?: boolean, link?: string) => {
-    if (isExternal && link) {
-      window.open(link, '_blank', 'noopener,noreferrer');
-      return;
-    }
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const scrollToSection = (id: string) => {
     setIsMenuOpen(false);
+    
+    // Use a small delay to allow the state change to propagate and menu to start closing
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }, 100);
   };
 
   return (
@@ -196,18 +199,36 @@ export default function App() {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id, item.isExternal, item.link)}
-                className={`text-sm font-medium transition-colors ${item.isExternal ? 'text-brand-purple font-black' : 'text-gray-600 hover:text-brand-purple'}`}
-              >
-                {item.label}
-              </button>
+              item.isExternal ? (
+                <a
+                  key={item.id}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-black text-brand-purple transition-all hover:scale-105"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => scrollToSection(item.id)}
+                  className="text-sm font-medium text-gray-600 hover:text-brand-purple transition-colors"
+                >
+                  {item.label}
+                </button>
+              )
             ))}
           </div>
 
           {/* Mobile Toggle */}
-          <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button 
+            type="button"
+            className="md:hidden p-2 text-brand-dark hover:bg-brand-neutral rounded-lg transition-colors" 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle Menu"
+          >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -216,20 +237,35 @@ export default function App() {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-white border-b border-gray-200 overflow-hidden"
+              initial={{ opacity: 0, height: 0, y: -10 }}
+              animate={{ opacity: 1, height: 'auto', y: 0 }}
+              exit={{ opacity: 0, height: 0, y: -10 }}
+              className="md:hidden bg-white border-b border-gray-200 shadow-xl overflow-hidden"
             >
-              <div className="flex flex-col p-4 gap-4">
+              <div className="flex flex-col p-4 gap-2">
                 {navItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id, item.isExternal, item.link)}
-                    className={`text-left py-2 px-4 rounded-md transition-colors ${item.isExternal ? 'bg-brand-purple/10 text-brand-purple font-bold' : 'hover:bg-brand-neutral'}`}
-                  >
-                    {item.label}
-                  </button>
+                  item.isExternal ? (
+                    <a
+                      key={item.id}
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="flex items-center justify-between py-4 px-5 bg-brand-purple/10 text-brand-purple font-black rounded-2xl text-sm transition-all active:scale-95"
+                    >
+                      {item.label}
+                      <ArrowRight size={18} />
+                    </a>
+                  ) : (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => scrollToSection(item.id)}
+                      className="text-left py-4 px-5 text-brand-dark font-bold hover:bg-brand-neutral rounded-2xl transition-colors text-sm"
+                    >
+                      {item.label}
+                    </button>
+                  )
                 ))}
               </div>
             </motion.div>
@@ -267,7 +303,7 @@ export default function App() {
         </div>
 
         {/* Intro Section */}
-        <section id="inicio" className="bg-brand-beige py-20 px-4">
+        <section id="inicio" className="bg-brand-beige py-20 px-4 scroll-mt-20">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="text-left">
@@ -350,7 +386,7 @@ export default function App() {
         </section>
 
         {/* Insecurity Section */}
-        <section id="contexto" className="py-24 px-4 bg-white">
+        <section id="contexto" className="py-24 px-4 bg-white scroll-mt-20">
           <div className="max-w-7xl mx-auto">
             <div className="mb-16 text-center">
               <h2 className="text-4xl md:text-5xl font-black text-brand-dark mb-6 tracking-tight uppercase">
@@ -524,7 +560,7 @@ export default function App() {
         </section>
 
         {/* Teacher's Role Section */}
-        <section id="professor" className="py-24 px-4 bg-brand-beige">
+        <section id="professor" className="py-24 px-4 bg-brand-beige scroll-mt-20">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold text-brand-dark mb-4">O Papel do Professor</h2>
@@ -570,7 +606,7 @@ export default function App() {
         </section>
 
         {/* Boas Práticas Section */}
-        <section id="conteudo" className="py-24 px-4 bg-white">
+        <section id="conteudo" className="py-24 px-4 bg-white scroll-mt-20">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold text-brand-dark mb-12 text-center uppercase tracking-tight">Boas Práticas em Sala de Aula</h2>
             
@@ -755,7 +791,7 @@ export default function App() {
         </section>
 
         {/* References Section */}
-        <section id="referencias" className="py-24 px-4 bg-brand-neutral/50">
+        <section id="referencias" className="py-24 px-4 bg-brand-neutral/50 scroll-mt-20">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-black text-brand-dark mb-12 text-center uppercase tracking-tighter">Curadoria e Referências</h2>
             
