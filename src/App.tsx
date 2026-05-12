@@ -33,7 +33,7 @@ import {
 } from 'recharts';
 
 import introImg from './assets/images/regenerated_image_1778097519723.png';
-import practicesImg from './assets/images/regenerated_image_1778097517365.png';
+import practicesImg from './assets/images/regenerated_image_1778602273769.png';
 import antraImg from './assets/images/regenerated_image_1778522677796.png';
 import aliancaImg from './assets/images/regenerated_image_1778522679760.png';
 import cordeiroImg from './assets/images/regenerated_image_1778522682255.png';
@@ -115,6 +115,7 @@ const simpleReferences = [
   "CORDEIRO, Maria José de Jesus Alves; RODRIGUES, Nadir Pereira. Formação docente na perspectiva da diversidade de gênero e sexualidade: desafios e possibilidades. Revista Observatorio de la Economía Latinoamericana, v. 22, n. 7, 2024.",
   "SALLES, Suzana de Moura Einloft; GUIMARAES, Willian. O papel da gestão escolar na implementação de políticas de diversidade sexual e de gênero nas escolas públicas. Revista Ação e Reflexão, v. 3, n. 1, p. 1-14, 2025.",
   "SOUSA, Kelyane Oliveira de. Programa de habilidades sociais na escola: uma forma de combate ao preconceito contra a diversidade sexual. 2017.",
+  "DEL PRETTE, Z. A. P.; DEL PRETTE, A. Psicologia das Habilidades Sociais: Terapia e Educação. Petrópolis: Vozes, 2001.",
   "BRASIL. Ministério da Educação. Resolução CNE/CP nº 01/2018 - Nome Social na Educação Básica."
 ];
 
@@ -164,7 +165,7 @@ export default function App() {
 
   const navItems = [
     { id: 'inicio', label: 'Introdução' },
-    { id: 'contexto', label: 'Insegurança no Ambiente Escola' },
+    { id: 'contexto', label: 'Insegurança no Ambiente Escolar' },
     { id: 'professor', label: 'Papel do Professor' },
     { id: 'conteudo', label: 'Boas Práticas em Sala de Aula' },
     { id: 'referencias', label: 'Curadoria e Referências' },
@@ -390,7 +391,7 @@ export default function App() {
           <div className="max-w-7xl mx-auto">
             <div className="mb-16 text-center">
               <h2 className="text-4xl md:text-5xl font-black text-brand-dark mb-6 tracking-tight uppercase">
-                Insegurança no <br /> Ambiente Escola
+                Insegurança no <br /> Ambiente Escolar
               </h2>
             </div>
 
@@ -563,7 +564,7 @@ export default function App() {
         <section id="professor" className="py-24 px-4 bg-brand-beige scroll-mt-20">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-brand-dark mb-4">O Papel do Professor</h2>
+              <h2 className="text-4xl md:text-5xl font-black text-brand-dark mb-6 tracking-tight uppercase">O Papel do Professor</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 A educação é um direito garantido pela Constituição. O vínculo entre aluno e professor deve ultrapassar a submissão mecânica, sendo porta para diálogo e afeto.
               </p>
@@ -608,7 +609,7 @@ export default function App() {
         {/* Boas Práticas Section */}
         <section id="conteudo" className="py-24 px-4 bg-white scroll-mt-20">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold text-brand-dark mb-12 text-center uppercase tracking-tight">Boas Práticas em Sala de Aula</h2>
+            <h2 className="text-4xl md:text-5xl font-black text-brand-dark mb-12 text-center uppercase tracking-tight">Boas Práticas em Sala de Aula</h2>
             
             <div className="flex flex-wrap justify-center gap-2 mb-12">
               {[
