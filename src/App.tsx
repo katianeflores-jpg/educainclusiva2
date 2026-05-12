@@ -33,7 +33,7 @@ import {
 } from 'recharts';
 
 import introImg from './assets/images/regenerated_image_1778097519723.png';
-import practicesImg from './assets/images/regenerated_image_1778602273769.png';
+import practicesImg from './assets/images/regenerated_image_1778604032753.png';
 import antraImg from './assets/images/regenerated_image_1778522677796.png';
 import aliancaImg from './assets/images/regenerated_image_1778522679760.png';
 import cordeiroImg from './assets/images/regenerated_image_1778522682255.png';
