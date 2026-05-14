@@ -34,18 +34,21 @@ import {
 } from 'recharts';
 
 import introImg from './assets/images/regenerated_image_1778097519723.png';
-import practicesImg from './assets/images/regenerated_image_1778778049456.png';
+import practicesImg from './assets/images/regenerated_image_1778097517365.png';
 import antraImg from './assets/images/regenerated_image_1778522677796.png';
 import aliancaImg from './assets/images/regenerated_image_1778522679760.png';
 import cordeiroImg from './assets/images/regenerated_image_1778522682255.png';
 import sallesImg from './assets/images/regenerated_image_1778522681295.png';
 import sousaImg from './assets/images/regenerated_image_1778522681791.png';
+import termImg from './assets/images/regenerated_image_1778602273769.png';
+import dontImg from './assets/images/regenerated_image_1778603776105.png';
+import medImg from './assets/images/regenerated_image_1778777849919.png';
 
 // Images for "Boas Práticas" tabs
-const terminologyImg = "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&q=80&w=800&h=600";
-const recordsImg = "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800&h=600";
-const dontDoImg = "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&q=80&w=800&h=600";
-const mediatorImg = "https://images.unsplash.com/photo-1577896851231-70ef1460370e?auto=format&fit=crop&q=80&w=800&h=600";
+const terminologyImg = termImg;
+const recordsImg = "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800&h=600";
+const dontDoImg = dontImg;
+const mediatorImg = medImg;
 
 // --- DATA FROM PDF CONTENT ---
 
@@ -731,7 +734,7 @@ export default function App() {
                           </div>
                         </div>
                       </div>
-                      <div className="relative group">
+                      <div className="relative group hidden md:block">
                         <div className="absolute -inset-1 bg-gradient-to-r from-brand-soft-green to-brand-purple rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                         <img 
                           src={practicesImg} 
@@ -770,7 +773,7 @@ export default function App() {
                           </div>
                         </div>
                       </div>
-                      <div className="relative group">
+                      <div className="relative group hidden md:block">
                         <div className="absolute -inset-1 bg-gradient-to-r from-brand-purple to-brand-dark rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                         <img 
                           src={terminologyImg} 
@@ -809,7 +812,7 @@ export default function App() {
                           </div>
                         </div>
                       </div>
-                      <div className="relative group">
+                      <div className="relative group hidden md:block">
                         <div className="absolute -inset-1 bg-gradient-to-r from-brand-soft-green to-brand-dark rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                         <img 
                           src={recordsImg} 
@@ -839,7 +842,7 @@ export default function App() {
                           </div>
                         ))}
                       </div>
-                      <div className="relative group">
+                      <div className="relative group hidden md:block">
                         <div className="absolute -inset-1 bg-gradient-to-r from-red-400 to-orange-400 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                         <img 
                           src={dontDoImg} 
@@ -874,7 +877,7 @@ export default function App() {
                           </div>
                         </div>
                       </div>
-                      <div className="relative group">
+                      <div className="relative group hidden md:block">
                         <div className="absolute -inset-1 bg-gradient-to-r from-brand-purple to-brand-soft-green rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                         <img 
                           src={mediatorImg} 
