@@ -16,7 +16,8 @@ import {
   BarChart2,
   PieChart as PieChartIcon,
   TrendingDown,
-  Speaker
+  Speaker,
+  ClipboardPen
 } from 'lucide-react';
 import { 
   BarChart, 
@@ -33,12 +34,18 @@ import {
 } from 'recharts';
 
 import introImg from './assets/images/regenerated_image_1778097519723.png';
-import practicesImg from './assets/images/regenerated_image_1778604032753.png';
+import practicesImg from './assets/images/regenerated_image_1778778049456.png';
 import antraImg from './assets/images/regenerated_image_1778522677796.png';
 import aliancaImg from './assets/images/regenerated_image_1778522679760.png';
 import cordeiroImg from './assets/images/regenerated_image_1778522682255.png';
 import sallesImg from './assets/images/regenerated_image_1778522681295.png';
 import sousaImg from './assets/images/regenerated_image_1778522681791.png';
+
+// Images for "Boas Práticas" tabs
+const terminologyImg = "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&q=80&w=800&h=600";
+const recordsImg = "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800&h=600";
+const dontDoImg = "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&q=80&w=800&h=600";
+const mediatorImg = "https://images.unsplash.com/photo-1577896851231-70ef1460370e?auto=format&fit=crop&q=80&w=800&h=600";
 
 // --- DATA FROM PDF CONTENT ---
 
@@ -169,7 +176,7 @@ export default function App() {
     { id: 'professor', label: 'Papel do Professor' },
     { id: 'conteudo', label: 'Boas Práticas em Sala de Aula' },
     { id: 'referencias', label: 'Curadoria e Referências' },
-    { id: 'avalie', label: 'Avalie', isExternal: true, link: '#' },
+    { id: 'avalie', label: 'Avalie', isExternal: true, link: 'https://forms.gle/9ZjbZtvCrEQpB1739' },
   ];
 
   const scrollToSection = (id: string) => {
@@ -285,7 +292,7 @@ export default function App() {
           >
             <div className="flex items-center gap-4 text-center md:text-left">
               <div className="bg-brand-purple p-2.5 rounded-xl animate-pulse shadow-lg shadow-brand-purple/30">
-                <Speaker className="text-white" size={20} />
+                <ClipboardPen className="text-white" size={20} />
               </div>
               <div>
                 <p className="text-sm font-black uppercase tracking-tight leading-none mb-1">Avaliação do Trabalho Acadêmico</p>
@@ -293,7 +300,7 @@ export default function App() {
               </div>
             </div>
             <a 
-              href="#" 
+              href="https://forms.gle/9ZjbZtvCrEQpB1739" 
               target="_blank" 
               rel="noopener noreferrer"
               className="px-8 py-2.5 bg-brand-purple hover:bg-brand-purple/90 text-white text-[10px] font-black rounded-full transition-all flex items-center gap-2 uppercase tracking-widest shadow-xl shadow-brand-purple/20 hover:scale-105 active:scale-95"
@@ -562,7 +569,7 @@ export default function App() {
 
         {/* Teacher's Role Section */}
         <section id="professor" className="py-24 px-4 bg-brand-beige scroll-mt-20">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-black text-brand-dark mb-6 tracking-tight uppercase">O Papel do Professor</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
@@ -570,7 +577,7 @@ export default function App() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
               {[
                 {
                   icon: <MessageCircle className="text-brand-purple" />,
@@ -603,6 +610,63 @@ export default function App() {
                 </motion.div>
               ))}
             </div>
+
+            {/* Special Feature: Interview */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              className="bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-gray-100"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-3">
+                <div className="bg-brand-dark text-white p-12 lg:p-16 flex flex-col justify-center">
+                  <div className="mb-8">
+                    <div className="w-20 h-20 bg-brand-purple rounded-3xl mb-6 flex items-center justify-center shadow-lg shadow-brand-purple/20 rotate-3 group-hover:rotate-0 transition-transform">
+                      <MessageCircle size={40} />
+                    </div>
+                    <span className="text-brand-purple font-black uppercase tracking-[0.2em] text-[10px] block mb-4">Destaque: Experiência na Prática</span>
+                    <h3 className="text-3xl font-black leading-tight uppercase tracking-tighter">Entrevista com <br /> Emanuel Rorschach</h3>
+                  </div>
+                  <p className="text-gray-400 text-sm leading-relaxed italic border-l-2 border-brand-purple pl-4 uppercase font-bold text-[10px]">
+                    Professor de filosofia e sociologia em uma escola estadual localizada em Mauá, SP.
+                  </p>
+                </div>
+                
+                <div className="lg:col-span-2 p-8 md:p-12 lg:p-16 space-y-12 bg-white max-h-[600px] overflow-y-auto custom-scrollbar">
+                  {[
+                    {
+                      q: "Como você define a origem da transfobia no ambiente escolar e o papel do professor diante disso?",
+                      a: "A questão da transfobia está intimamente ligada à falta de letramento, o que pode levar uma pessoa a ser ofensiva sem sequer perceber. No cotidiano escolar, o professor atua como um intermediador fundamental em conflitos de bullying e preconceito. Para isso, é essencial que ele saiba aplicar as habilidades sociais, que são ferramentas de desempenho social e inter-relação fundamentais para a saúde mental e o desenvolvimento no ambiente de aprendizagem."
+                    },
+                    {
+                      q: "Quais habilidades sociais específicas são mais relevantes para lidar com a diversidade em sala de aula?",
+                      a: "Uma das principais é a comunicação assertiva, que consiste em ensinar e praticar formas respeitosas de falar e ouvir, evitando invalidações ou piadas preconcuituosas. Historicamente, o treinamento assertivo foca na expressão adequada de sentimentos e na defesa de direitos, sendo crucial para distinguir comportamentos assertivos de agressivos ou passivos. Além disso, a empatia é vital, definida como a capacidade de reconhecer e identificar-se com a perspectiva do outro, manifestando reações que expressem essa compreensão."
+                    },
+                    {
+                      q: "Você poderia relatar uma experiência prática onde o uso (ou a falha) dessas habilidades ficou evidente?",
+                      a: "Tive um caso com uma aluna que utilizava nome social. Ao ver dois nomes na chamada digital, fiquei confuso e perguntei qual seria o correto. Esse questionamento disparou gatilhos nela, que começou a chorar e pediu que o nome de batismo nunca mais fosse repetido. Esse episódio mostra como o professor deve usar essas situações para incentivar os alunos a respeitarem as identidades e sentimentos dos colegas."
+                    },
+                    {
+                      q: "Quais estratégias o educador deve adotar para garantir um ambiente mais inclusivo?",
+                      a: "É necessário desenvolver uma postura ética e profissional baseada em: Reconhecimento de preconceitos próprios (o desenvolvimento social humano é contínuo); Escuta imparcial e ausência de favoritismos; e Formação contínua. O campo do Treinamento de Habilidades Sociais (THS) oferece bases teóricas e práticas que ajudam o professor a agir de forma consciente em temas como inclusão e mediação de conflitos."
+                    },
+                    {
+                      q: "Qual é o impacto final de um professor que domina essas habilidades sociais?",
+                      a: "Quando o educador controla julgamentos pessoais e atua com ética, ele fortalece o diálogo e reduz conflitos. O domínio de habilidades como resolução de problemas e cooperação permite que o professor transforme a escola em um ambiente acolhedor, cumprindo as metas de desenvolvimento social esperadas para jovens e adultos. Isso é crucial porque déficits nessas habilidades podem comprometer fases posteriores do ciclo vital dos estudantes."
+                    }
+                  ].map((item, idx) => (
+                    <div key={idx} className="space-y-4">
+                      <div className="flex gap-4 items-start group">
+                        <div className="w-8 h-8 rounded-full bg-brand-purple/10 flex items-center justify-center flex-shrink-0 text-brand-purple font-black text-xs">P</div>
+                        <h4 className="font-black text-brand-dark leading-tight uppercase tracking-tight text-sm group-hover:text-brand-purple transition-colors">{item.q}</h4>
+                      </div>
+                      <div className="pl-12 border-l-2 border-brand-neutral ml-4">
+                        <p className="text-gray-600 text-sm leading-relaxed">{item.a}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
           </div>
         </section>
 
@@ -616,6 +680,7 @@ export default function App() {
                 { id: 'boas-praticas', label: 'Boas Práticas', icon: <CheckCircle2 size={18} /> },
                 { id: 'nome-social', label: 'Terminologia e Pronomes', icon: <Users size={18} /> },
                 { id: 'registros', label: 'Registros Escolares', icon: <ClipboardCheck size={18} /> },
+                { id: 'mediador', label: 'Mediador', icon: <MessageCircle size={18} /> },
                 { id: 'nao-fazer', label: 'O que NÃO fazer', icon: <ShieldAlert size={18} /> },
               ].map((tab) => (
                 <button
@@ -708,7 +773,7 @@ export default function App() {
                       <div className="relative group">
                         <div className="absolute -inset-1 bg-gradient-to-r from-brand-purple to-brand-dark rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                         <img 
-                          src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&q=80&w=800&h=600" 
+                          src={terminologyImg} 
                           alt="Identidade e Pronomes" 
                           className="relative rounded-3xl shadow-xl w-full object-cover aspect-4/3"
                           referrerPolicy="no-referrer"
@@ -747,7 +812,7 @@ export default function App() {
                       <div className="relative group">
                         <div className="absolute -inset-1 bg-gradient-to-r from-brand-soft-green to-brand-dark rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                         <img 
-                          src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800&h=600" 
+                          src={recordsImg} 
                           alt="Registros Escolares e Legislação" 
                           className="relative rounded-3xl shadow-xl w-full object-cover aspect-4/3"
                           referrerPolicy="no-referrer"
@@ -777,8 +842,43 @@ export default function App() {
                       <div className="relative group">
                         <div className="absolute -inset-1 bg-gradient-to-r from-red-400 to-orange-400 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                         <img 
-                          src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&q=80&w=800&h=600" 
+                          src={dontDoImg} 
                           alt="O que NÃO fazer: Barreiras Sociais" 
+                          className="relative rounded-3xl shadow-xl w-full object-cover aspect-4/3"
+                          referrerPolicy="no-referrer"
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {activeTab === 'mediador' && (
+                    <div className="grid md:grid-cols-2 gap-12 items-center">
+                      <div className="space-y-6">
+                        <h3 className="text-2xl font-black text-brand-dark leading-tight uppercase tracking-tight">Postura Mediadora e Ética</h3>
+                        <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm space-y-4">
+                          <p className="text-gray-700 leading-relaxed italic border-l-4 border-brand-purple pl-6 py-2">
+                            "Sempre que possível é importante a integração dos temas e práticas pedagógicas que promovam os direitos humanos, igualdade e combate ao preconceito (Lei nº 12.852/2013 - Estatuto da Juventude)."
+                          </p>
+                          <p className="text-sm text-gray-600 font-medium">
+                            Isso implica em abordar ativamente em sala temas relacionados à identidade de gênero, visando o combate a preconceitos, bullying e quaisquer ameaças à dignidade da pessoa humana.
+                          </p>
+                        </div>
+                        <div className="grid grid-cols-1 gap-4">
+                          <div className="flex items-center gap-4 p-5 bg-brand-purple/5 rounded-2xl border border-brand-purple/10">
+                            <MessageCircle className="text-brand-purple flex-shrink-0" />
+                            <span className="text-xs font-bold text-brand-dark uppercase tracking-tight">Fomento à Habilidades Sociais de Empatia</span>
+                          </div>
+                          <div className="flex items-center gap-4 p-5 bg-brand-soft-green/5 rounded-2xl border border-brand-soft-green/10">
+                            <ShieldAlert className="text-brand-soft-green flex-shrink-0" />
+                            <span className="text-xs font-bold text-brand-dark uppercase tracking-tight">Tolerância Zero contra Bullying e LGBTIfobia</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="relative group">
+                        <div className="absolute -inset-1 bg-gradient-to-r from-brand-purple to-brand-soft-green rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                        <img 
+                          src={mediatorImg} 
+                          alt="Professor Mediador e Direitos Humanos" 
                           className="relative rounded-3xl shadow-xl w-full object-cover aspect-4/3"
                           referrerPolicy="no-referrer"
                         />
