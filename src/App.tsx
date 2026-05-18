@@ -627,10 +627,10 @@ export default function App() {
                       <MessageCircle size={40} />
                     </div>
                     <span className="text-brand-purple font-black uppercase tracking-[0.2em] text-[10px] block mb-4">Destaque: Experiência na Prática</span>
-                    <h3 className="text-3xl font-black leading-tight uppercase tracking-tighter">Entrevista com <br /> Emanuel Rorschach</h3>
+                    <h3 className="text-3xl font-black leading-tight uppercase tracking-tighter">Entrevista com <br /> Emanuel Ribeiro Cordeiro</h3>
                   </div>
                   <p className="text-gray-400 text-sm leading-relaxed italic border-l-2 border-brand-purple pl-4 uppercase font-bold text-[10px]">
-                    Professor de filosofia e sociologia em uma escola estadual localizada em Mauá, SP.
+                    Cientista Social e Especialista em Gestão Escolar com 19 anos de atuação na rede pública de Mauá e Ribeirão Pires. Pesquisador de Habilidades Sociais e Mediação Escolar, dedicado à promoção do desenvolvimento humano e inclusão no ambiente de aprendizagem.
                   </p>
                 </div>
                 
